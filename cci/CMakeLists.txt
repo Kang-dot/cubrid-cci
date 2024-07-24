@@ -212,9 +212,9 @@ install(TARGETS cascci
   )
 
 if(WITH_CCI AND UNIX)
-  file(CREATE_LINK "../cci/include/cas_cci.h" cas_cci.h SYMBOLIC)
+  file(CREATE_LINK "../cci/include/cas_cci.h" "${CMAKE_BINARY_DIR}/cas_cci.h" SYMBOLIC)
   install(FILES ${CMAKE_BINARY_DIR}/cas_cci.h DESTINATION ${CUBRID_INCLUDEDIR})
-  file(CREATE_LINK "../cci/lib/libcascci.so" libcascci.so SYMBOLIC)
+  file(CREATE_LINK "../cci/lib/libcascci.so" "${CMAKE_BINARY_DIR}/libcascci.so" SYMBOLIC)
   install(FILES ${CMAKE_BINARY_DIR}/libcascci.so DESTINATION ${CUBRID_LIBDIR})
 endif(WITH_CCI AND UNIX)
 
